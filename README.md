@@ -19,7 +19,7 @@ Then in your code the library can be imported like this: ````import pg_widgets a
 
 ## Showcase
 
-The simple examples in the tests directory gives these visualizations.
+The simple examples in the tests directory gives these visualizations. (Sorry for the ugly colors, i know nothing about UI.. these can easily be changed!)
 
 ### tests/completeSuite.py
 
