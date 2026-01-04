@@ -4,6 +4,8 @@ from .basics import *
 from .ColorPicker import ColorPicker
 from .TuningSliders import TuningSliders
 from .ControlManager import ControlManager
+from .Tab import Tab
+from .Button import Button
 
 __all__ = [name for name in globals() if not name.startswith("__")]
-__all__ += ["ColorPicker", "TuningSliders", "ControlManager"]
+__all__ += ["ColorPicker", "TuningSliders", "ControlManager", "Tab", "Button"]

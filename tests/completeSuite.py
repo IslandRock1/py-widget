@@ -1,13 +1,11 @@
 
 import pg_widgets as pw
-from pg_widgets import UIGroup
-
 from random import randint
 
 def main():
     controlManager = pw.ControlManager()
 
-    left = UIGroup((0, 0), (0.5, 1.0))
+    left = pw.UIGroup((0, 0), (0.5, 1.0))
     left["plotTop"] = pw.Plot.inBorder((0, 0), (1.0, 0.5))
     left["plotTop"].setTitle("Top Plot")
     left["plotTop"].setXLabel("X-Axis")
@@ -20,7 +18,7 @@ def main():
 
     controlManager["left"] = left
 
-    right = UIGroup((0.5, 0.0), (0.5, 1.0))
+    right = pw.UIGroup((0.5, 0.0), (0.5, 1.0))
     right["text"] = pw.TextBox.inBorder((0.0, 0.0), (1.0, 0.2))
 
     right["sliderInput"]  = pw.Slider.inBorder((0.0, 0.2), (0.5, 0.1))
@@ -29,7 +27,7 @@ def main():
 
     right["progressbar"] = pw.ProgressBar.inBorder((0.0, 0.3), (1.0, 0.1))
 
-    bottom = UIGroup((0.0, 0.4), (1.0, 0.6))
+    bottom = pw.UIGroup((0.0, 0.4), (1.0, 0.6))
     bottom["togglebuttonVertical"] = pw.ToggleButton.inBorder((0.0, 0.0), (0.1, 1.0))
     bottom["togglebuttonHorizontal"] = pw.ToggleButton.inBorder((0.1, 0.0), (0.5, 0.2))
 

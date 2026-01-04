@@ -31,6 +31,8 @@ class UIElement:
             "textColor": (255, 0, 128)
         }
 
+        self._hookingFunctions = {}
+
     @classmethod
     def inBorder(cls, pos, size = (1.0, 1.0), *, borderX: float = 5.0, borderY: float = 5.0):
         from .Border import Border
@@ -90,7 +92,17 @@ class UIElement:
         return self._colors[name]
 
     def _leftClick(self, mousePress, mousePos):
-        pass
+        if "leftClick" in self._hookingFunctions:
+            self._hookingFunctions["leftClick"](mousePress, mousePos)
+
+    def overrideOnLeftClick(self, func, variable = None):
+        def f(mousePress, mousePos):
+            if (variable is None):
+                func()
+            else:
+                func(variable)
+
+        self._hookingFunctions["leftClick"] = f
 
     def _rightClick(self, mousePress, mousePos):
         pass
