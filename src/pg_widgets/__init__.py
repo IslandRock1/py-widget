@@ -1,5 +1,6 @@
 
 from .basics import *
+from . import utils
 
 from .ColorPicker import ColorPicker
 from .TuningSliders import TuningSliders
