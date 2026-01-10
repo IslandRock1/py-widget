@@ -22,7 +22,7 @@ class Tab(UIGroup):
 
             label = str(i + 1)
 
-            self[f"button{label}"]: UIElement = TextBox.inBorder((xPosBase + xSize * i, yPosBase), (xSize, ySize))
+            self[f"button{label}"]: UIElement = TextBox((xPosBase + xSize * i, yPosBase), (xSize, ySize))
             self[f"button{label}"].setText(label)
 
             def f(activeGroup, idx = i):

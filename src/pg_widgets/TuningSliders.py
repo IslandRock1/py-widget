@@ -15,13 +15,13 @@ class TuningSliders(UIGroup):
             sizeX = (1 / len(labels))
 
             nameL = f"text{label}"
-            self[nameL] = TextBox.inBorder((posX, 0), (sizeX, sizeY), borderX=3, borderY=3)
+            self[nameL] = TextBox((posX, 0), (sizeX, sizeY), borderX=3, borderY=3)
 
             nameV = f"value{label}"
-            self[nameV] = TextBox.inBorder((posX, sizeY), (sizeX, sizeY), borderX=3, borderY=3)
+            self[nameV] = TextBox((posX, sizeY), (sizeX, sizeY), borderX=3, borderY=3)
 
             nameS = f"slider{label}"
-            self[nameS] = Slider.inBorder((posX, 2 * sizeY), (sizeX, 1 - 2 * sizeY), borderX=3, borderY=3)
+            self[nameS] = Slider((posX, 2 * sizeY), (sizeX, 1 - 2 * sizeY), borderX=3, borderY=3)
 
             if (current_values is not None) and (current_values[i] is not None):
                 self[nameL].setText(f"{label}:")

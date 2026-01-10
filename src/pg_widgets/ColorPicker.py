@@ -14,10 +14,10 @@ class ColorPicker(UIGroup):
         third = 0.33
 
         for (i, name) in enumerate(["Hue", "Sat", "Val"]):
-            self[f"text{name}"] = TextBox.inBorder((i * third, 0), (third, 0.2))
+            self[f"text{name}"] = TextBox((i * third, 0), (third, 0.2))
             self[f"text{name}"].setText(name)
 
-            self[f"slider{name}"] = Slider.inBorder((i * third, 0.2), (third, 0.8))
+            self[f"slider{name}"] = Slider((i * third, 0.2), (third, 0.8))
             self[f"slider{name}"].setValue(1.0)
 
     def getValue(self):

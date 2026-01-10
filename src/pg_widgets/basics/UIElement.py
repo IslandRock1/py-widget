@@ -33,8 +33,22 @@ class UIElement:
 
         self._hookingFunctions = {}
 
+    def __new__(cls, pos, size = (1.0, 1.0), *, borderX: float = 5.0, borderY: float = 5.0, inBorder: bool = True):
+        if (inBorder):
+            from .Border import Border
+            b = Border(pos, size, borderX=borderX, borderY=borderY)
+
+            instance = super().__new__(cls)
+            instance.__init__((0.0, 0.0), (0.0, 0.0))
+            b["main"] = instance
+            return b
+        else:
+            return cls(pos, size)
+
     @classmethod
     def inBorder(cls, pos, size = (1.0, 1.0), *, borderX: float = 5.0, borderY: float = 5.0):
+        return cls(pos, size)
+
         from .Border import Border
         b = Border(pos, size, borderX=borderX, borderY=borderY)
 

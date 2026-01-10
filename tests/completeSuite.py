@@ -6,12 +6,12 @@ def main():
     controlManager = pw.ControlManager()
 
     left = pw.UIGroup((0, 0), (0.5, 1.0))
-    left["plotTop"] = pw.Plot.inBorder((0, 0), (1.0, 0.5))
+    left["plotTop"] = pw.Plot((0, 0), (1.0, 0.5))
     left["plotTop"].setTitle("Top Plot")
     left["plotTop"].setXLabel("X-Axis")
     left["plotTop"].setYLabel("Y-Axis")
 
-    left["plotBot"] = pw.Plot.inBorder((0.0, 0.5), (1.0, 0.5))
+    left["plotBot"] = pw.Plot((0.0, 0.5), (1.0, 0.5))
     left["plotBot"].setTitle("Bot Plot")
     left["plotBot"].setXLabel("X-Axis")
     left["plotBot"].setYLabel("Y-Axis")
@@ -19,17 +19,17 @@ def main():
     controlManager["left"] = left
 
     right = pw.UIGroup((0.5, 0.0), (0.5, 1.0))
-    right["text"] = pw.TextBox.inBorder((0.0, 0.0), (1.0, 0.2))
+    right["text"] = pw.TextBox((0.0, 0.0), (1.0, 0.2))
 
-    right["sliderInput"]  = pw.Slider.inBorder((0.0, 0.2), (0.5, 0.1))
-    right["sliderOutput"] = pw.Slider.inBorder((0.5, 0.2), (0.5, 0.1))
+    right["sliderInput"]  = pw.Slider((0.0, 0.2), (0.5, 0.1))
+    right["sliderOutput"] = pw.Slider((0.5, 0.2), (0.5, 0.1))
     right["sliderInput"].changeValues(1.0, 0.0, 0.5)
 
-    right["progressbar"] = pw.ProgressBar.inBorder((0.0, 0.3), (1.0, 0.1))
+    right["progressbar"] = pw.ProgressBar((0.0, 0.3), (1.0, 0.1))
 
     bottom = pw.UIGroup((0.0, 0.4), (1.0, 0.6))
-    bottom["togglebuttonVertical"] = pw.ToggleButton.inBorder((0.0, 0.0), (0.1, 1.0))
-    bottom["togglebuttonHorizontal"] = pw.ToggleButton.inBorder((0.1, 0.0), (0.5, 0.2))
+    bottom["togglebuttonVertical"] = pw.ToggleButton((0.0, 0.0), (0.1, 1.0))
+    bottom["togglebuttonHorizontal"] = pw.ToggleButton((0.1, 0.0), (0.5, 0.2))
 
     labels = ["Param 1", "Param 2", "Param 3"]
     bottom["tuningsliders"] = pw.TuningSliders((0.6, 0.0), (0.4, 1.0), labels=labels)
